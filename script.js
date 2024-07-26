@@ -131,8 +131,6 @@ class Menu {
                     break;
                 case '2':
                     this.deleteItem()
-                case '3':
-                    this.showInventory()
             }
         }
     }
@@ -151,7 +149,10 @@ class Menu {
         let type = prompt('Is this a weapon, trinket, or gear type item?')
         this.selectedCharacter.inventory.push(new Item(name, type))
     }
-
+//Oddly, the deletItem() function worked during testing then threw an error during the video.
+//I went back and retyped it, but looking at the video I am not seeing any difference between the code.
+//This is a concern as if there is no difference then it could be randomly throwing errors, which is not good.
+//Otherwise, there is something small that changed in the syntax and I simply did not notice it (likely but unsettling as I don't like missing things)
     deleteItem() {
         let index = prompt('Enter the index of the item you wish to delete:')
         if (index > -1 && index < this.selectedCharacter.inventory.length) {
